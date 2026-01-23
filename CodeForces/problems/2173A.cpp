@@ -7,13 +7,24 @@ using namespace std;
 #define ll long long
 
 void solve() {
-  string s1, s2;
-  cin >> s1 >> s2;
+  int n, k;
+  cin >> n >> k;
 
-  int len1 = s1.length(), len2 = s2.length();
+  string s;
+  cin >> s;
 
-  for (int i = 0; i < len2; i++) {
+  int slept = 0, awake = 0;
+  for (int i = 0; i < n; i++) {
+    if (s[i] == '1') {
+      awake = k;
+    } else if (awake > 0) {
+      awake--;
+    } else if (s[i] == '0') {
+      slept++;
+    }
   }
+
+  cout << slept << endl;
 }
 
 int main() {

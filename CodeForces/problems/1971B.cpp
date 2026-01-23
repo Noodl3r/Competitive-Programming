@@ -7,12 +7,24 @@ using namespace std;
 #define ll long long
 
 void solve() {
-  string s1, s2;
-  cin >> s1 >> s2;
-
-  int len1 = s1.length(), len2 = s2.length();
-
-  for (int i = 0; i < len2; i++) {
+  string s;
+  cin >> s;
+  int n = s.length();
+  bool allSame = true;
+  int i = 0;
+  for (; i < n - 1; i++) {
+    if (s[i] != s[i + 1]) {
+      allSame = false;
+      char temp = s[i];
+      s[i] = s[i + 1];
+      s[i + 1] = temp;
+      break;
+    }
+  }
+  if (allSame) {
+    cout << "NO" << endl;
+  } else {
+    cout << "YES" << endl << s << endl;
   }
 }
 

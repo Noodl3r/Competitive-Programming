@@ -6,22 +6,21 @@ using namespace std;
   cin.tie(0);
 #define ll long long
 
-void solve() {
-  string s1, s2;
-  cin >> s1 >> s2;
-
-  int len1 = s1.length(), len2 = s2.length();
-
-  for (int i = 0; i < len2; i++) {
-  }
-}
-
 int main() {
   fastio;
-  int tc;
-  cin >> tc;
-  while (tc--) {
-    solve();
+  string target = "heidi";
+  int j = 0;
+
+  string s;
+  cin >> s;
+  for (auto& x : s) {
+    if (x == target[j]) {
+      j++;
+    }
   }
-  return 0;
+  if (j >= 5) {
+    cout << "YES" << endl;
+  } else {
+    cout << "NO" << endl;
+  }
 }

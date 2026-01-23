@@ -6,22 +6,24 @@ using namespace std;
   cin.tie(0);
 #define ll long long
 
-void solve() {
-  string s1, s2;
-  cin >> s1 >> s2;
-
-  int len1 = s1.length(), len2 = s2.length();
-
-  for (int i = 0; i < len2; i++) {
-  }
-}
-
 int main() {
   fastio;
-  int tc;
-  cin >> tc;
-  while (tc--) {
-    solve();
+  int n, t;
+  cin >> n >> t;
+  vector<int> portals(n - 1);
+
+  for (int i = 0; i < n - 1; i++) {
+    cin >> portals[i];
+  }
+
+  int curr = 0;
+  while (curr < t - 1) {
+    curr += portals[curr];
+  }
+  if (curr == t - 1) {
+    cout << "YES" << endl;
+  } else {
+    cout << "NO" << endl;
   }
   return 0;
 }

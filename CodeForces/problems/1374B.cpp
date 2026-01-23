@@ -7,13 +7,21 @@ using namespace std;
 #define ll long long
 
 void solve() {
-  string s1, s2;
-  cin >> s1 >> s2;
-
-  int len1 = s1.length(), len2 = s2.length();
-
-  for (int i = 0; i < len2; i++) {
+  int n;
+  cin >> n;
+  int n2 = 0, n3 = 0;
+  while (n % 2 == 0) {
+    n /= 2;
+    n2++;
   }
+  while (n % 3 == 0) {
+    n /= 3;
+    n3++;
+  }
+  if (n == 1 && n2 <= n3) {
+    cout << 2 * n3 - n2 << endl;
+  } else
+    cout << -1 << endl;
 }
 
 int main() {

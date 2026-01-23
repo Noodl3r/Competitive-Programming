@@ -7,13 +7,19 @@ using namespace std;
 #define ll long long
 
 void solve() {
-  string s1, s2;
-  cin >> s1 >> s2;
+  string s;
+  cin >> s;
+  int n = s.length();
+  string final(2 + (n - 2) / 2, '0');
 
-  int len1 = s1.length(), len2 = s2.length();
-
-  for (int i = 0; i < len2; i++) {
+  final[0] = s[0];
+  final[2 + (n - 2) / 2] = s[n - 1];
+  int j = 1;
+  for (int i = 1; i < 2 + (n - 2) / 2; i++) {
+    final[i] = s[j];
+    j += 2;
   }
+  cout << final << endl;
 }
 
 int main() {

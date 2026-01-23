@@ -7,13 +7,17 @@ using namespace std;
 #define ll long long
 
 void solve() {
-  string s1, s2;
-  cin >> s1 >> s2;
+  string s;
+  cin >> s;
 
-  int len1 = s1.length(), len2 = s2.length();
-
-  for (int i = 0; i < len2; i++) {
+  //Since Y's annihilate all the N's.
+  int y = 0;
+  for (const auto& x : s) {
+    if (x == 'Y')
+      y++;
   }
+
+  cout << (y > 1 ? "NO" : "YES") << endl;
 }
 
 int main() {

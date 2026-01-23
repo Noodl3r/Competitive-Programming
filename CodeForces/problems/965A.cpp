@@ -6,22 +6,11 @@ using namespace std;
   cin.tie(0);
 #define ll long long
 
-void solve() {
-  string s1, s2;
-  cin >> s1 >> s2;
-
-  int len1 = s1.length(), len2 = s2.length();
-
-  for (int i = 0; i < len2; i++) {
-  }
-}
-
 int main() {
   fastio;
-  int tc;
-  cin >> tc;
-  while (tc--) {
-    solve();
-  }
+  int k, n, s, p;
+  cin >> k >> n >> s >> p;
+  cout << (k * ((n + s - 1) / s) + p - 1) / p << endl;
+
   return 0;
 }

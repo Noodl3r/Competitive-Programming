@@ -7,13 +7,24 @@ using namespace std;
 #define ll long long
 
 void solve() {
-  string s1, s2;
-  cin >> s1 >> s2;
+  int a, b, l;
+  cin >> l >> a >> b;
 
-  int len1 = s1.length(), len2 = s2.length();
+  unordered_set<int> visited;
+  int max = -INT_MAX;
 
-  for (int i = 0; i < len2; i++) {
+  for (int i = a;; i += b) {
+    if (i >= l) {
+      i %= l;
+    }
+    if (i > max)
+      max = i;
+    if (visited.count(i))
+      break;
+
+    visited.insert(i);
   }
+  cout << max << endl;
 }
 
 int main() {

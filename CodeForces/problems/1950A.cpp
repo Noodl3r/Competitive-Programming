@@ -7,12 +7,14 @@ using namespace std;
 #define ll long long
 
 void solve() {
-  string s1, s2;
-  cin >> s1 >> s2;
-
-  int len1 = s1.length(), len2 = s2.length();
-
-  for (int i = 0; i < len2; i++) {
+  int a, b, c;
+  cin >> a >> b >> c;
+  if (a < b && b < c) {
+    cout << "STAIR" << endl;
+  } else if (a < b && b > c) {
+    cout << "PEAK" << endl;
+  } else {
+    cout << "NONE" << endl;
   }
 }
 
